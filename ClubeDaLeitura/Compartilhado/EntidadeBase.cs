@@ -2,7 +2,7 @@ namespace ClubeDaLeitura.ConsoleApp.Compartilhado;
 
 public abstract class EntidadeBase
 {
-    public int id;
+    public int id { get; set; }
 
     public abstract void AtualizarRegistro(EntidadeBase registroAtualizado);
     public abstract string Validar();

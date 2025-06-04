@@ -1,5 +1,3 @@
-using ClubeDaLeitura.ConsoleApp.ModuloAmigo;
-
 namespace ClubeDaLeitura.ConsoleApp.Compartilhado;
 
 public abstract class TelaBase

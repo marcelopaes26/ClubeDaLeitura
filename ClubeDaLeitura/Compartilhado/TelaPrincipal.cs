@@ -1,6 +1,6 @@
-using GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
-using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 using ClubeDaLeitura.ConsoleApp.ModuloAmigo;
+using ClubeDaLeitura.ConsoleApp.ModuloCaixa;
+using ClubeDaLeitura.ConsoleApp.ModuloRevista;
 
 namespace ClubeDaLeitura.ConsoleApp.Compartilhado;
 
@@ -9,27 +9,24 @@ public class TelaPrincipal
     private char opcaoEscolhida;
 
     private RepositorioAmigo repositorioAmigo;
-    private RepositorioEquipamento repositorioEquipamento;
-    private RepositorioChamado repositorioChamado;
-
     private TelaAmigo telaAmigo;
-    private TelaEquipamento telaEquipamento;
-    private TelaChamado telaChamado;
+
+    private RepositorioCaixa repositorioCaixa;
+    private TelaCaixa telaCaixa;
+
+    private RepositorioRevista repositorioRevista;
+    private TelaRevista telaRevista;
 
     public TelaPrincipal()
     {
         repositorioAmigo = new RepositorioAmigo();
-        repositorioEquipamento = new RepositorioEquipamento();
-        repositorioChamado = new RepositorioChamado();
-
         telaAmigo = new TelaAmigo(repositorioAmigo);
+        
+        repositorioCaixa = new RepositorioCaixa();
+        telaCaixa = new TelaCaixa(repositorioCaixa);
 
-        telaEquipamento = new TelaEquipamento(
-            repositorioEquipamento,
-            repositorioAmigo
-        );
-
-        telaChamado = new TelaChamado(repositorioChamado, repositorioEquipamento);
+        repositorioRevista = new RepositorioRevista();
+        telaRevista = new TelaRevista(repositorioRevista, repositorioCaixa);
     }
 
     public void ApresentarMenuPrincipal()
@@ -64,6 +61,7 @@ public class TelaPrincipal
 
         else if (opcaoEscolhida == '3')
             return telaRevista;
+            
         else if (opcaoEscolhida == '4')
             return telaEmprestimo;
         

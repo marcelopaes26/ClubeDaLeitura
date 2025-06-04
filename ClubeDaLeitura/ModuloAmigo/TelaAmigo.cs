@@ -21,7 +21,7 @@ public class TelaAmigo : TelaBase
         Console.WriteLine();
 
         Console.WriteLine(
-            "{0, -10} | {1, -20} | {2, -30} | {3, -15}",
+            "{0, -10} | {1, -30} | {2, -30} | {3, -20}",
             "Id", "Nome", "Nome Responsável", "Telefone"
         );
 
@@ -35,7 +35,7 @@ public class TelaAmigo : TelaBase
                 continue;
 
             Console.WriteLine(
-               "{0, -10} | {1, -20} | {2, -30} | {3, -15}",
+               "{0, -10} | {1, -30} | {2, -30} | {3, -20}",
                 a.id, a.nome, a.nomeResponsavel, a.telefone
             );
         }
@@ -43,15 +43,15 @@ public class TelaAmigo : TelaBase
         Console.ReadLine();
     }
 
-    protected override Amigo ObterDados()
+    protected override EntidadeBase ObterDados()
     {
         Console.Write("Digite o nome do amigo: ");
         string nome = Console.ReadLine();
 
-        Console.Write("Digite o nome do responsável: ");
+        Console.Write("Digite o nome do responsável pelo amigo: ");
         string nomeResponsavel = Console.ReadLine();
 
-        Console.Write("Digite o telefone do amigo: ");
+        Console.Write("Digite o telefone do amigo ou responsável: ");
         string telefone = Console.ReadLine();
 
         Amigo amigo = new Amigo(nome, nomeResponsavel, telefone);
