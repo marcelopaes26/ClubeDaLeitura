@@ -7,8 +7,7 @@ public class TelaRevista : TelaBase
 {
     private RepositorioCaixa repositorioCaixa;
 
-    public TelaRevista(RepositorioRevista repositorio, RepositorioCaixa repositorioCaixa) 
-        : base("Revista", repositorio)
+    public TelaRevista(RepositorioRevista repositorio, RepositorioCaixa repositorioCaixa) : base("Revista", repositorio)
     {
         this.repositorioCaixa = repositorioCaixa;
     }

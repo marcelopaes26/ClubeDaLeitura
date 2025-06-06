@@ -10,6 +10,8 @@ public abstract class RepositorioBase
         registros[contadorRegistros] = novoRegistro;
 
         contadorRegistros++;
+
+        novoRegistro.id = contadorRegistros;
     }
 
     public bool EditarRegistro(int idSelecionado, EntidadeBase registroAtualizado)

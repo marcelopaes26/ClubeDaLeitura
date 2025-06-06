@@ -1,6 +1,7 @@
 using ClubeDaLeitura.ConsoleApp.ModuloAmigo;
 using ClubeDaLeitura.ConsoleApp.ModuloCaixa;
 using ClubeDaLeitura.ConsoleApp.ModuloRevista;
+using ClubeDaLeitura.ConsoleApp.ModuloEmprestimo;
 
 namespace ClubeDaLeitura.ConsoleApp.Compartilhado;
 
@@ -17,16 +18,22 @@ public class TelaPrincipal
     private RepositorioRevista repositorioRevista;
     private TelaRevista telaRevista;
 
+    private RepositorioEmprestimo repositorioEmprestimo;
+    private TelaEmprestimo telaEmprestimo;
+
     public TelaPrincipal()
     {
         repositorioAmigo = new RepositorioAmigo();
         telaAmigo = new TelaAmigo(repositorioAmigo);
-        
+
         repositorioCaixa = new RepositorioCaixa();
         telaCaixa = new TelaCaixa(repositorioCaixa);
 
         repositorioRevista = new RepositorioRevista();
         telaRevista = new TelaRevista(repositorioRevista, repositorioCaixa);
+        
+        repositorioEmprestimo = new RepositorioEmprestimo();
+        telaEmprestimo = new TelaEmprestimo(repositorioEmprestimo, repositorioAmigo, repositorioRevista);
     }
 
     public void ApresentarMenuPrincipal()
