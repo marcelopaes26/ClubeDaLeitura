@@ -17,20 +17,13 @@ public class Emprestimo : EntidadeBase
         this.amigo = amigo;
         this.revista = revista;
         this.dataEmprestimo = DateTime.Now;
+        this.dataDevolucao = dataEmprestimo.AddDays(revista.caixa.diasDeEmprestimo);
         this.status = "Aberto";
-
-        CalcularDataDevolucao();
     }
 
     public override void AtualizarRegistro(EntidadeBase registroAtualizado)
     {
-        Emprestimo emprestimoAtualizado = (Emprestimo)registroAtualizado;
-
-        this.amigo = emprestimoAtualizado.amigo;
-        this.revista = emprestimoAtualizado.revista;
-        this.dataEmprestimo = emprestimoAtualizado.dataEmprestimo;
-        this.dataDevolucao = emprestimoAtualizado.dataDevolucao;
-        this.status = emprestimoAtualizado.status;
+        this.status = "Concluído";
     }
 
     public override string Validar()
@@ -42,22 +35,8 @@ public class Emprestimo : EntidadeBase
 
         if (revista == null)
             erros += "O campo \"Revista\" é obrigatório.";
-            
-        else if (revista.status != "Disponível")
-            erros += "A revista deve estar disponível para empréstimo.";
 
         return erros;
     }
-
-    public void CalcularDataDevolucao()
-    {
-        if (revista != null && revista.caixa != null)
-            this.dataDevolucao = this.dataEmprestimo.AddDays(revista.caixa.diasDeEmprestimo);
-    }
-
-    public void RegistrarDevolucao()
-    {
-        this.status = "Concluído";
-        this.revista.status = "Disponível";
-    }
+    
 }
