@@ -1,10 +1,10 @@
-# Club de Leitura
+# Clube Da Leitura
 
-Um aplicativo de console em C# para gerenciar um clube de leitura, permitindo o cadastro e controle de amigos, caixas, revistas e empréstimos.
+Um aplicativo de console em C# para gerenciar um Clube Da Leitura, permitindo o cadastro e controle de amigos, caixas, revistas e empréstimos.
 
 ## Descrição
 
-O **Club de Leitura** é um sistema desenvolvido em C# que facilita a gestão de um clube de leitura. Ele permite cadastrar amigos, caixas (contêineres para revistas), revistas e empréstimos, com regras de negócio específicas para garantir a integridade dos dados. O projeto segue o modelo de arquitetura em 3 camadas (Apresentação, Domínio e Dados) e implementa boas práticas de programação orientada a objetos, como encapsulamento, reutilização de código e tratamento de erros.
+O **Clube Da Leitura** é um sistema desenvolvido em C# que facilita a gestão de um Clube Da Leitura. Ele permite cadastrar amigos, caixas (contêineres para revistas), revistas e empréstimos, com regras de negócio específicas para garantir a integridade dos dados. O projeto segue o modelo de arquitetura em 3 camadas (Apresentação, Domínio e Dados) e implementa boas práticas de programação orientada a objetos, como encapsulamento, reutilização de código e tratamento de erros.
 
 ## Funcionalidades
 
@@ -33,7 +33,7 @@ O **Club de Leitura** é um sistema desenvolvido em C# que facilita a gestão de
 
 ## Estrutura do Projeto
 ```
-ClubDeLeitura/
+ClubeDaLeitura/
 ├── Dominio/
 │   ├── Amigo.cs                # Classe para gerenciar amigos
 │   ├── Caixa.cs                # Classe para gerenciar caixas
@@ -50,7 +50,7 @@ ClubDeLeitura/
 │   ├── TelaRevista.cs          # Interface para revistas
 │   ├── TelaEmprestimo.cs       # Interface para empréstimos
 ├── Program.cs                  # Ponto de entrada do aplicativo
-├── ClubDeLeitura.csproj        # Arquivo de configuração do projeto
+├── ClubeDaLeitura.csproj        # Arquivo de configuração do projeto
 ```
 
 ## Pré-requisitos
@@ -65,7 +65,7 @@ ClubDeLeitura/
    ```
 2. Navegue até a pasta do projeto:
    ```bash
-   cd club-de-leitura
+   cd ClubeDaLeitura
    ```
 3. Restaure as dependências:
    ```bash
